@@ -9,8 +9,8 @@ train.fillna(-9999, inplace=True)
 
 feats = np.setdiff1d(list(train.columns), ['Id','Response'])
 
-x = np.array(train[feats])
-y = train.Response.ravel()
+X = np.array(train[feats])
+Y = train.Response.ravel()
 
 seed = 7
 test_size = 0.33
