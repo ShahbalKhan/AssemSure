@@ -6,7 +6,7 @@ from sklearn import preprocessing
 import pandas as pd 
 import numpy as np 
 
-train = pd.read_csv("balanced_train_joined.csv") #load dataframe train
+train = pd.read_csv("/home/mma/MMA/FYP/Dataset/id-based-features-and-numeric-train.csv") #load dataframe train
 
 train.fillna(0, inplace=True)
 
@@ -28,7 +28,7 @@ X_train = normalizer.transform(X_train)
 Y_train = train.Response.ravel()
 
 # Test data
-test = pd.read_csv("engineered features/test_feat.csv") #load test dataframe
+test = pd.read_csv("/home/mma/MMA/FYP/Dataset/id-based-features-and-numeric-test.csv") #load test dataframe
 test.fillna(0, inplace=True)
 
 #replace nan with numbers in StartTime in test
