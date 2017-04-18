@@ -32,5 +32,5 @@ pred = pd.DataFrame({'Id': IDS,
 pred = pred.set_index('Id')
 
 
-pred.to_csv("predictions_mlp.csv")
+pred.to_csv("pred_xgb.csv")
 

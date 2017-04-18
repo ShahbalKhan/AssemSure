@@ -28,7 +28,7 @@ X_train = normalizer.transform(X_train)
 Y_train = train.Response.ravel()
 
 # Test data
-test = pd.read_csv("/home/mma/MMA/FYP/Dataset/id-based-feaatures-andnumeric-test.csv") #load test dataframe
+test = pd.read_csv("/home/mma/MMA/FYP/Dataset/id-based-feaatures-and-numeric-test.csv") #load test dataframe
 test.fillna(0, inplace=True)
 
 # #replace nan with numbers in StartTime in test
@@ -81,4 +81,4 @@ pred = pd.DataFrame({'Id': IDS,
 pred = pred.set_index('Id')
 
 
-pred.to_csv("predictions_mlp.csv")
+pred.to_csv("pred_mlp.csv")
