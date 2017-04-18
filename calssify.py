@@ -12,12 +12,12 @@ train.fillna(0, inplace=True)
 
 features = np.setdiff1d(list(train.columns),["Id","Response"]) #get the headers for feeature columns
 
-#replace nan with numbers in StartTime in train
-garbage = train.StartTime 
+# #replace nan with numbers in StartTime in train
+# garbage = train.StartTime 
 
-gr = np.array(garbage)
-gr = np.nan_to_num(gr)
-train.StartTime = gr
+# gr = np.array(garbage)
+# gr = np.nan_to_num(gr)
+# train.StartTime = gr
 
 
 X_train = np.array(train[features])
@@ -31,11 +31,11 @@ Y_train = train.Response.ravel()
 test = pd.read_csv("/home/mma/MMA/FYP/Dataset/test_numeric.csv") #load test dataframe
 test.fillna(0, inplace=True)
 
-#replace nan with numbers in StartTime in test
-garbage = test.StartTime 
-gr = np.array(garbage)
-gr = np.nan_to_num(gr)
-test.StartTime = gr
+# #replace nan with numbers in StartTime in test
+# garbage = test.StartTime 
+# gr = np.array(garbage)
+# gr = np.nan_to_num(gr)
+# test.StartTime = gr
 
 # get Ids for prediction file
 IDS = test.Id
