@@ -6,7 +6,10 @@ from sklearn import preprocessing
 import pandas as pd 
 import numpy as np 
 
-train = pd.read_csv("train_feat.csv") #load dataframe train
+train = pd.read_csv("balanced_train_joined.csv") #load dataframe train
+
+train.fillna(0, inplace=True)
+
 features = np.setdiff1d(list(train.columns),["Id","Response"]) #get the headers for feeature columns
 
 #replace nan with numbers in StartTime in train
@@ -25,7 +28,8 @@ X_train = normalizer.transform(X_train)
 Y_train = train.Response.ravel()
 
 # Test data
-test = pd.read_csv("test_feat.csv") #load test dataframe
+test = pd.read_csv("engineered features/test_feat.csv") #load test dataframe
+test.fillna(0, inplace=True)
 
 #replace nan with numbers in StartTime in test
 garbage = test.StartTime 
@@ -53,9 +57,12 @@ scaler = StandardScaler()
 scaler.fit(X_train) 
 X = scaler.transform(X_train)
 
+#clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.01, hidden_layer_sizes=(97, 10, 2), random_state=1, 
+#	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
 
-clf = MLPClassifier(activation='relu' ,solver='sgd', alpha=0.01, hidden_layer_sizes=(4,3), random_state=1, 
-	shuffle=True,verbose=True)
+
+clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.01, hidden_layer_sizes=(97, 10, 2), random_state=1, 
+	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
 
 print "MLP model training under parameters: \n \n " + str(clf)
 Model = clf.fit(X_train, Y_train)
@@ -67,7 +74,6 @@ X = scaler.transform(X_test)
 
 predictions = clf.predict(X_test)
 
-print predictions
 pred = pd.DataFrame({'Id': IDS,
 						'Response': predictions})
 
