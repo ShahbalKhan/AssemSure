@@ -13,7 +13,7 @@ X_train = np.array(train[feats])
 y_train = train.Response.ravel()
 
 
-test = pd.read_csv("/home/mma/MMA/FYP/Datasets/id-based-features-and-numeric-test.csv")
+test = pd.read_csv("/home/mma/MMA/FYP/Dataset/id-based-features-and-numeric-test.csv")
 IDS = test.Id
 
 feats = np.setdiff1d(list(test.columns), ['Id'])
