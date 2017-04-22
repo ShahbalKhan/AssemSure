@@ -1,7 +1,7 @@
 import pandas as pd 
 
-f = open("balanced_train_joined.csv","r")
-g = open("50)balanced_train.csv","w")
+f = open("../balanced_train_joined.csv","r")
+g = open("50_balanced_train.csv","w")
 
 a = f.readline()
 g.write(a)
