@@ -61,7 +61,7 @@ X = scaler.transform(X_train)
 #	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
 
 
-clf = MLPClassifier(activation='relu' ,solver='sgd', alpha=0.01, hidden_layer_sizes=(100 , 12, 2), random_state=1, 
+clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.1, hidden_layer_sizes=(100 , 12, 2), random_state=1, 
 	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
 
 print "MLP model training under parameters: \n \n " + str(clf)
