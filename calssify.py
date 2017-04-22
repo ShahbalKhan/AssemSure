@@ -6,7 +6,7 @@ from sklearn import preprocessing
 import pandas as pd 
 import numpy as np 
 
-train = pd.read_csv("50_balanced_train_joined.csv") #load dataframe train
+train = pd.read_csv("50_balanced_train.csv") #load dataframe train
 
 train.fillna(0, inplace=True)
 
