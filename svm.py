@@ -19,7 +19,7 @@ feats = np.setdiff1d(list(test.columns), ['Id'])
 
 X_test = np.array(test[feats])
 
-model = svm.SVC()
+model = svm.SVC(verbose=True)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)

@@ -57,12 +57,12 @@ scaler = StandardScaler()
 scaler.fit(X_train) 
 X = scaler.transform(X_train)
 
-#clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.01, hidden_layer_sizes=(97, 10, 2), random_state=1, 
-#	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
-
-
-clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.1, hidden_layer_sizes=(98 , 12, 2), random_state=1, 
+clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.01, hidden_layer_sizes=(97, 10, 2), random_state=1, 
 	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
+
+
+# clf = MLPClassifier(activation='relu' ,solver='adam', alpha=0.1, hidden_layer_sizes=(98 , 12, 2), random_state=1, 
+# 	shuffle=True,verbose=True,learning_rate='adaptive', max_iter=500, validation_fraction=.2)
 
 print "MLP model training under parameters: \n \n " + str(clf)
 Model = clf.fit(X_train, Y_train)
